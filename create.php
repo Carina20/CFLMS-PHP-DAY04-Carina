@@ -37,24 +37,32 @@ if(isset($_SESSION["user"])){
    <legend>Add car</legend>
 
    <form action="actions/a_create.php" method= "post">
-       <table cellspacing= "0" cellpadding="0">
+       <b><table cellspacing= "3" cellpadding="3"> 
            <tr>
-               <th>car model</th>
-               <td><input  type="text" name="model"  placeholder="car model" /></td >
+               <td>car make</td>
+               <td><input  type="text" name="make"  placeholder="car make" /></td>
            </tr>    
            <tr>
-               <th>type</th>
-               <td><input  type="text" name= "type" placeholder="type" /></td>
+               <td>model</td>
+               <td><input  type="text" name= "model" placeholder="model" /></td>
            </tr>
            <tr>
-               <th>color</ th>
-               <td><input type="text"  name="color" placeholder ="color" /></td>
+               <td>price</td>
+               <td><input type="text"  name="price" placeholder ="price" /></td>
            </tr>
            <tr>
-               <td><button type ="submit">Insert car</button></td>
-               <td><a href= "admin.php"><button  type="button">Back</button></a></td>
+               <td>availability</td>
+               <td><input  type="text" name= "availability" placeholder="availability" /></td>
+           </tr>
+           <tr>
+               <td>rental place</td>
+               <td><input  type="text" name= "rental_place" placeholder="rental place" /></td>
+           </tr>
+           <tr>
+               <td><br><button type ="submit">Insert car</button></td>
+               <td><br><a href= "admin.php"><button  type="button">Back</button></a></td>
            </tr >
-       </table>
+       </table></b>
    </form>
 
 </fieldset >

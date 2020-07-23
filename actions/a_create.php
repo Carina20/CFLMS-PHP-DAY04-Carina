@@ -16,11 +16,13 @@ if(isset($_SESSION["user"])){
 require_once '../dbconnect.php';
 
 if ($_POST) {
+   $make = $_POST['make'];
    $model = $_POST['model'];
-   $type = $_POST['type'];
-   $color = $_POST[ 'color'];
+   $price = $_POST[ 'price'];
+   $availability = $_POST[ 'availability'];
+   $rental_place = $_POST[ 'rental_place'];
 
-   $sql = "INSERT INTO car (model, type, color) VALUES ('$model', '$type', '$color')";
+   $sql = "INSERT INTO car (make, model, price, availability, rental_place) VALUES ('$make', '$model', '$price', '$availability', '$rental_place')";
     if($conn->query($sql) === TRUE) {
        echo "<p>New Record Successfully Created</p>" ;
        echo "<a href='../create.php'><button type='button'>Back</button></a>";
