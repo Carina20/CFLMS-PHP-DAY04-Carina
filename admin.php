@@ -17,7 +17,7 @@ $res=mysqli_query($conn, "SELECT * FROM users WHERE userId=".$_SESSION['admin'])
 $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 
-$resCar = mysqli_query($conn, "SELECT * FROM car WHERE available = 'yes'");
+$resCar = mysqli_query($conn, "SELECT * FROM car");
 
 ?>
 <!DOCTYPE html>
@@ -33,17 +33,11 @@ $resCar = mysqli_query($conn, "SELECT * FROM car WHERE available = 'yes'");
            <a  href="logout.php?logout">Sign Out</a><br><hr>
 
            <?php
-           if($resCar->num_rows == 0 ){
-			echo "No result";
-		}elseif($resCar->num_rows == 1){
-			$row = $resCar->fetch_assoc();
-			echo $row["model"]. " ". $row["type"]." ".$row["color"]. " ".$row["available"];
-		}else {
+
 			$rows = $resCar->fetch_all(MYSQLI_ASSOC);
 			foreach ($rows as $value) {
-				echo $value["car_id"]. " ----- " .$value["model"]. " ". $value["type"]." ".$value["color"]. " ".$value["available"]."<br>";
+				echo $value["product_id"]. " ----- " .$value["make"]. " ". $value["model"]." ".$value["price"]. " ".$value["rental_place"]."<br>";
 			}
-		}
 
  		?>
 		
